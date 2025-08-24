@@ -1,0 +1,5 @@
+.env
+store/
+data/pdfs/
+.venv/
+__pycache__/
