@@ -60,9 +60,20 @@ for msg in st.session_state.chat_history:
         if msg["role"] == "assistant":
             st.markdown("### Answer")
         st.write(msg["content"])
-        # Show sources for assistant messages
         if msg["role"] == "assistant" and msg.get("sources"):
             st.markdown("### Sources")
             for i, c in enumerate(msg["sources"], 1):
                 with st.expander(f"[{i}] {c.get('source', 'Unknown')} — page {c.get('page', '?')}"):
                     st.write(c.get("text", "No text available."))
+
+# 👇 Scroll to the last element
+st.markdown(
+    """
+    <div id="scroll-to-bottom"></div>
+    <script>
+        var el = document.getElementById("scroll-to-bottom");
+        if (el) { el.scrollIntoView({behavior: "smooth"}); }
+    </script>
+    """,
+    unsafe_allow_html=True
+)
