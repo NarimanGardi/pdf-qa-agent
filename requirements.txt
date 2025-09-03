@@ -6,3 +6,4 @@ tqdm==4.66.4
 openai==1.101.0
 tiktoken==0.11.0
 streamlit==1.37.1
+watchdog==6.0.0
